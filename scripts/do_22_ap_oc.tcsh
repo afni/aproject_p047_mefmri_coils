@@ -144,22 +144,6 @@ set run_script = ap.cmd.${subjid}
 
 cat << EOF >! ${run_script}
 
-# AP: rest FMRI, simple
-#
-# single echo FMRI, simple processing for initial QC
-# anatomical has skull on
-#
-# ============================================================================
-
-ap_run_simple_rest_me.tcsh                                             \
-    -run_ap                                                            \
-    -subjid      ${subjid}                                             \
-    -nt_rm       2                                                     \
-    -anat        ${dset_anat}                                          \
-    -epi_me_run  ${dset_epi}                                           \
-    -echo_times  ${times_me}                                           \
-    -template    ${template}
-
 # Comments on processing, ME-FMRI data
 #
 # + input EPI dsets have 3.0 mm isotropic voxels, determining final size
@@ -173,7 +157,7 @@ afni_proc.py                                                                  \
     -echo_times                ${times_me}                                    \
     -copy_anat                 ${sdir_ssw}/anatSS.${subjid}.nii               \
     -anat_has_skull            no                                             \
-    -anat_follower           anat_w_skull anat ${dir_ssw}/anatU.${subjid}.nii \
+    -anat_follower          anat_w_skull anat ${sdir_ssw}/anatU.${subjid}.nii \
     -blocks                    tshift align tlrc volreg mask combine          \
                                blur scale regress                             \
     -radial_correlate_blocks   tcat volreg regress                            \
