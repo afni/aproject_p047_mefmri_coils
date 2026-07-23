@@ -18,7 +18,7 @@ setenv AFNI_COMPRESSOR GZIP           # zip BRIK dsets
 if ( $use_slurm ) then
     # load modules: *** add any other necessary ones
     source /etc/profile.d/modules.csh
-    module load afni freesurfer/7.4.1
+    module load afni freesurfer/8.1.0 #7.4.1
     source $FREESURFER_HOME/SetUpFreeSurfer.csh
 
     # set N_threads for OpenMP
