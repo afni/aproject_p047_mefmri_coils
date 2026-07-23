@@ -63,17 +63,17 @@ set dir_log        = ${dir_inroot}/logs
 set dir_basic      = ${dir_inroot}/data_00_basic
 set dir_gtkyd      = ${dir_inroot}/data_02_gtkyd
 set dir_deob       = ${dir_inroot}/data_05_deob_slice
-set dir_ap_simple  = ${dir_inroot}/data_21_ap_simple
+set dir_ap         = ${dir_inroot}/data_21_ap_simple
 
 # subject directories
 set sdir_basic     = ${dir_basic}/${subjpa}
 set sdir_deob      = ${dir_deob}/${subjpa}
 set sdir_func      = ${sdir_deob}/func            # input for proc
 set sdir_anat      = ${sdir_deob}/anat
-set sdir_ap_simple = ${dir_ap_simple}/${subjpa}
+set sdir_ap        = ${dir_ap}/${subjpa}
 
 
-set sdir_out       = ${sdir_ap_simple}            # *** set output directory
+set sdir_out       = ${sdir_ap}                   # *** set output directory
 set lab_out        = ${sdir_out:t}
 
 # supplementary directories and info
